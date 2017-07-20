@@ -47,10 +47,10 @@ RUN docker-php-source extract \
 RUN apk add --update --no-cache git
 
 # imagick
-RUN apk add --update --no-cache autoconf g++ imagemagick-dev libtool make \
+RUN apk add --update --no-cache autoconf g++ imagemagick-dev libtool make pcre-dev \
     && pecl install imagick \
     && docker-php-ext-enable imagick \
-    && apk del autoconf g++ libtool make
+    && apk del autoconf g++ libtool make pcre-dev
 
 # install bcmath extension
 RUN docker-php-ext-install bcmath
