@@ -7,7 +7,7 @@ RUN apk add --update --no-cache libintl icu icu-dev libxml2-dev \
 
 # mysqli, pdo, pdo_mysql, pdo_pgsql
 RUN apk add --update --no-cache postgresql-dev \
-    && docker-php-ext-install mysqli pdo pdo_mysql pdo_pgsql
+    && docker-php-ext-install mysqli pdo pdo_mysql
 
 # mcrypt, gd, iconv
 RUN apk add --update --no-cache \
@@ -52,6 +52,8 @@ RUN apk add --update --no-cache autoconf g++ imagemagick-dev libtool make \
     && docker-php-ext-enable imagick \
     && apk del autoconf g++ libtool make
 
+# install bcmath extension
+RUN docker-php-ext-install bcmath
 
 RUN sed -i -e 's/listen.*/listen = 0.0.0.0:9000/' /usr/local/etc/php-fpm.conf
 
