@@ -16,6 +16,7 @@ PHP7 docker image with useful extensions:
 - xdebug (available on [`m2sh/php7:alpine-dev`](https://github.com/m2sh/php7/blob/master/alpine/dev/Dockerfile))
 - imagick
 - mysql-client \[`mysqldump`\] (available on [`m2sh/php7:alpine-mysql`](https://github.com/m2sh/php7/blob/master/alpine/mysql/Dockerfile))
+- bcmath (required by hashids package)
 
 Tags & Dockerfiles:  
 based on `php:7-fpm` (debian based php image):  

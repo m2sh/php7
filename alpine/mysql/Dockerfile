@@ -54,6 +54,9 @@ RUN apk add --update --no-cache autoconf g++ imagemagick-dev libtool make \
 # install mysql-client for using mysqldump
 RUN apk add --update --no-cache mysql-client
 
+# install bcmath extension
+RUN docker-php-ext-install bcmath
+
 RUN sed -i -e 's/listen.*/listen = 0.0.0.0:9000/' /usr/local/etc/php-fpm.conf
 
 RUN echo "expose_php=0" > /usr/local/etc/php/php.ini
