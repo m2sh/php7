@@ -24,7 +24,7 @@ RUN apk add --update --no-cache gmp gmp-dev \
     && docker-php-ext-install gmp
 
 # php-redis
-ENV PHPREDIS_VERSION 3.0.0
+ENV PHPREDIS_VERSION 3.1.2
 
 RUN docker-php-source extract \
     && curl -L -o /tmp/redis.tar.gz https://github.com/phpredis/phpredis/archive/$PHPREDIS_VERSION.tar.gz \
