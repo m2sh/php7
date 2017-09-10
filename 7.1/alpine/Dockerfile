@@ -35,6 +35,9 @@ RUN apk add --update --no-cache autoconf g++ imagemagick-dev libtool make pcre-d
 # git client, mysql-client
 RUN apk add --update --no-cache git mysql-client
 
+# pcntl
+RUN docker-php-ext-install pcntl 
+
 RUN sed -i -e 's/listen.*/listen = 0.0.0.0:9000/' /usr/local/etc/php-fpm.conf
 
 RUN echo "expose_php=0" > /usr/local/etc/php/php.ini
