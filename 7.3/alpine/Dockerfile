@@ -37,6 +37,9 @@ RUN apk add --update --no-cache autoconf g++ imagemagick-dev libtool make pcre-d
     && docker-php-ext-enable imagick \
     && apk del autoconf g++ libtool make pcre-dev
 
+# exif
+RUN docker-php-ext-install exif
+
 # git client, mysql-client
 RUN apk add --update --no-cache git mysql-client
 
